@@ -1,0 +1,33 @@
+package org.utl.idgs.microservicio.entidad;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.Instant;
+
+@Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+public class Cupon {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cupon_id")
+    private Long id;
+
+    @Column(nullable = false)
+    private String codigo;
+
+    @Column(nullable = false)
+    private double descuento;
+
+    @Column(nullable = false)
+    private Instant fechaInicio;
+
+    @Column(nullable = false)
+    private Instant fechaFin;
+}
